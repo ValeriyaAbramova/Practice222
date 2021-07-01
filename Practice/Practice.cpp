@@ -87,6 +87,7 @@ char println()
 
 char search()
 {
+    const char* filename = "D://data2.txt";
     return 0;
 }
 
