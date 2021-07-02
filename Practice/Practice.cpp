@@ -6,11 +6,23 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <assert.h>
+#include <iostream>
+#include <conio.h>
+
 #define _CRT_SECURE_NO_WARNINGS
+#define M1 256
+#define M2 128
 
 char println();
 char search();
 void Display();
+char split_for_depth(char& line);
+char split_line(char& line);
+const char delimetr = ';';
+const char* filename = "D://data2.txt";
+
+FILE* fp;
 
 void Display()
 
@@ -58,7 +70,7 @@ int main(void)
             break;
         default:
             system("cls");  //For Windows
-            printf("Конец выполнения\n");
+            printf("Повторите свой ввод!\n");
 
         }
     }
@@ -68,24 +80,36 @@ int main(void)
 
 char println()
 {
-    const char* filename = "D://data5.txt";
-    char cc[256];
-    FILE* fp;
+    char line[M2][M1];
+    int k = 0;
+    fp = fopen(filename, "r");
     // чтение из файла
-    if ((fp = fopen(filename, "r")) == NULL)
+    if (fp == NULL)
     {
         perror("Ошибка");
         return 1;
     }
-    while ((fgets(cc, 256, fp)) != NULL)
+    else
     {
-        printf("%s", cc);
+        while (fgets(line[k], M1, fp) != NULL)
+        {
+            k++;
+        }
     }
-
     fclose(fp);
+    printf("************************************************************\n");
+    printf("|   Название реки   |   Длина реки     |   Средняя глубина |\n");
+    printf("************************************************************\n");
+    for (int i = 0; i < k; ++i)
+    {
+        split_line(*line[i]);
+    }
     return 0;
 }
+char split_line(char& line)
+{
 
+}
 char search()
 {
     const char* filename = "D://data2.txt";
