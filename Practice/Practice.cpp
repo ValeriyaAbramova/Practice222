@@ -1,4 +1,6 @@
 ﻿// Practice.cpp 
+// Абрамова В.Д. 
+// 17 Вариант
 // КОДИРОВКА ТЕКСТОВОГО ФАЙЛА ДОЛЖНА БЫТЬ ANSI
 
 #include <stdio.h>
@@ -9,7 +11,6 @@
 #include <assert.h>
 #include <iostream>
 #include <conio.h>
-
 #define _CRT_SECURE_NO_WARNINGS
 #define M1 256
 #define M2 128
@@ -37,13 +38,11 @@ void Display()
     printf("+----------------------------------------------------------+\n");
 
 }
-
 int main(void)
 {
     setlocale(LC_ALL, "rus");
     char opts;
     bool Complete = false;
-
     for (;;)
     {
         Display();
@@ -72,13 +71,10 @@ int main(void)
         default:
             system("cls");  //For Windows
             printf("Повторите свой ввод!\n");
-
         }
     }
     printf("\n");
 }
-
-
 char println()
 {
     char line[M2][M1];
@@ -148,10 +144,11 @@ char search()
     fclose(fp);
     for (int i = 0; i < k; ++i)
     {
-        split_for_depth2(*line[i]);
+        split_for_depth(*line[i]);
     }
     return 0;
 }
+
 char split_for_depth(char& line)
 {
     char* lines[3];
