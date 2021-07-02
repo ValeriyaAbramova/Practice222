@@ -179,29 +179,3 @@ char split_for_depth(char& line)
     }
     return 0;
 }
-
-char split_for_depth2(char& line)
-{
-    char* lines[3];
-    char a;
-    int i = 0, k = 0, max = 3;
-    int var;
-    char* depth[M1];
-    char* piece = strtok(&line, ";");
-    while (piece != NULL)
-    {
-
-        lines[i] = piece;
-        piece = strtok(NULL, ";");
-        i++;
-        for (int j = 0; j < k; j++)
-        {
-            //if((int)depth[j] < 50)
-            printf("%d\n", (depth[j] - '0'));
-        }
-
-
-
-        return 0;
-    }
-}
