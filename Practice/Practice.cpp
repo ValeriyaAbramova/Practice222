@@ -23,7 +23,8 @@ char split_line(char& line);
 const char delimetr = ';';
 const char* filename = "D://data2.txt";
 char split_for_depth2(char& line);
-
+int summ;
+char* suzan;
 FILE* fp;
 
 void Display()
@@ -35,6 +36,7 @@ void Display()
     printf("|             1. Вывод списка                              | \n");
     printf("|             2. Вывод суммарной длины рек,                | \n|         глубина которых меньше 50 метров                 | \n");
     printf("|             3. Очистить                                  | \n");
+    printf("|             4. Выход                                     | \n");
     printf("+----------------------------------------------------------+\n");
 
 }
@@ -68,8 +70,12 @@ int main(void)
             system("CLS");
             Complete = false;
             break;
+        case '4':
+            system("pause");
+            return 0;
+            break;
         default:
-            system("cls");  //For Windows
+            system("cls");  
             printf("Повторите свой ввод!\n");
         }
     }
@@ -156,23 +162,30 @@ char split_for_depth(char& line)
     int i = 0, k = 0, max = 3;
     int var;
     char* depth[M1];
+    char* size[M2];
     char* piece = strtok(&line, ";");
+    int g; // глубина 
+    int b; // длина 
     while (piece != NULL)
     {
 
         lines[i] = piece;
         piece = strtok(NULL, ";");
         i++;
-        if (i == 2)
+        if (i == 3) // когда мы на 3 столбце 
         {
-            depth[k] = piece;
+            depth[k] = piece; 
+            g = atoi(piece);
+            if (g < 50)
+            {
+                size[k] = suzan;
+                b = atoi(piece);
+                summ += b;
+            }
             k++;
+            printf("%d", summ);
         }
     }
-    for (int j = 0; j < k; j++)
-    {
-        //if((int)depth[j] < 50)
-        printf("%d\n", (depth[j] - '0'));
-    }
+   
     return 0;
 }
