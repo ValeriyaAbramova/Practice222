@@ -14,7 +14,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #define M1 256
 #define M2 128
-
 char println();
 char search();
 void Display();
@@ -22,10 +21,8 @@ char split_for_depth(char& line);
 char split_line(char& line);
 const char delimetr = ';';
 const char* filename = "D://data2.txt";
-char split_for_depth2(char& line);
-int summ;
-char* suzan;
 FILE* fp;
+int lolik(int argc);
 
 void Display()
 
@@ -157,35 +154,36 @@ char search()
 
 char split_for_depth(char& line)
 {
-   
     char* lines[3];
     char a;
     int i = 0, k = 0, max = 3;
     int var;
     char* depth[M1];
-    char* size[M2];
     char* piece = strtok(&line, ";");
+    int L = 2;
     int g; // глубина 
     int b; // длина 
+    int summ;
+
     while (piece != NULL)
     {
 
         lines[i] = piece;
         piece = strtok(NULL, ";");
         i++;
-        if (i == 3) // когда мы на 3 столбце 
-        {
-            depth[k] = piece;
-            g = atoi(piece);
-            if (g < 50)
+    }
+    for (int k = 0; k < i; ++k)
+    {
+            g = atoi(lines[3]);
+            if (g < 50, summ = 0)
             {
-                size[k] = suzan;
-                b = atoi(piece);
+                b = atoi(lines[2]);
                 summ += b;
             }
-            k++;
-            printf("%d", summ);
-        }
+            printf("d", summ);
+
+        
     }
-    return 0;
-}
+        return 0;
+    }
+
