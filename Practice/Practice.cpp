@@ -157,6 +157,7 @@ char search()
 
 char split_for_depth(char& line)
 {
+   
     char* lines[3];
     char a;
     int i = 0, k = 0, max = 3;
@@ -174,7 +175,7 @@ char split_for_depth(char& line)
         i++;
         if (i == 3) // когда мы на 3 столбце 
         {
-            depth[k] = piece; 
+            depth[k] = piece;
             g = atoi(piece);
             if (g < 50)
             {
@@ -186,6 +187,5 @@ char split_for_depth(char& line)
             printf("%d", summ);
         }
     }
-   
     return 0;
 }
