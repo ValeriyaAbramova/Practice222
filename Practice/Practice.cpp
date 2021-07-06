@@ -20,7 +20,7 @@ void Display();
 char split_for_depth(char& line);
 char split_line(char& line);
 const char delimetr = ';';
-const char* filename = "D://data2.txt";
+const char* filename1 = "D://data2.txt";
 FILE* fp;
 int summ;
 
@@ -82,7 +82,7 @@ char println()
 {
     char line[M2][M1];
     int k = 0;
-    fp = fopen(filename, "r");
+    fp = fopen(filename1, "r");
     // чтение из файла
     if (fp == NULL)
     {
@@ -130,7 +130,7 @@ char search()
     int k = 0;
     char* lines[3];
     int i = 0;
-    fp = fopen(filename, "r");
+    fp = fopen(filename1, "r");
     // чтение из файла
     if (fp == NULL)
     {
@@ -162,30 +162,23 @@ char split_for_depth(char& line)
     char* piece = strtok(&line, ";");
     while (piece != NULL)
     {
-
         lines[i] = piece;
         piece = strtok(NULL, ";");
         i++;
-        if (i == 2)
+        if (i == 1)
         {
-            depth[k] = piece;
-            
+         depth[k] = piece;
+            k++;
             for (int j = 0; j < k; j++)
             {
                 a = atoi(depth[j]);
                 if (a < 50)
                 {
-                    i == 1;
-                    size[k] = piece;
-                    b = atoi(size[j]);
-                    summ += b;
-                }
 
-            }
-            k++;
+                }
+            }   
         }
     }
-    printf("Summ = %d ", summ);
     return 0;
 }
 
