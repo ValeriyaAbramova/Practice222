@@ -165,7 +165,7 @@ char split_for_depth(char& line)
         lines[i] = piece;
         piece = strtok(NULL, ";");
         i++;
-        if (i == 1)
+        if (i == 2)
         {
          depth[k] = piece;
             k++;
@@ -174,10 +174,11 @@ char split_for_depth(char& line)
                 a = atoi(depth[j]);
                 if (a < 50)
                 {
-
+                    printf("Lokh\n");
                 }
-            }   
+            }
         }
+        
     }
     return 0;
 }
