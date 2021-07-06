@@ -22,7 +22,7 @@ char split_line(char& line);
 const char delimetr = ';';
 const char* filename = "D://data2.txt";
 FILE* fp;
-int lolik(int argc);
+int summ;
 
 void Display()
 
@@ -155,35 +155,37 @@ char search()
 char split_for_depth(char& line)
 {
     char* lines[3];
-    char a;
+    int a, b;
     int i = 0, k = 0, max = 3;
-    int var;
+    char* size[M1];
     char* depth[M1];
     char* piece = strtok(&line, ";");
-    int L = 2;
-    int g; // глубина 
-    int b; // длина 
-    int summ;
-
     while (piece != NULL)
     {
 
         lines[i] = piece;
         piece = strtok(NULL, ";");
         i++;
-    }
-    for (int k = 0; k < i; ++k)
-    {
-            g = atoi(lines[3]);
-            if (g < 50, summ = 0)
+        if (i == 2)
+        {
+            depth[k] = piece;
+            
+            for (int j = 0; j < k; j++)
             {
-                b = atoi(lines[2]);
-                summ += b;
-            }
-            printf("d", summ);
+                a = atoi(depth[j]);
+                if (a < 50)
+                {
+                    i == 1;
+                    size[k] = piece;
+                    b = atoi(size[j]);
+                    summ += b;
+                }
 
-        
+            }
+            k++;
+        }
     }
-        return 0;
-    }
+    printf("Summ = %d ", summ);
+    return 0;
+}
 
