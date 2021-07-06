@@ -148,6 +148,7 @@ char search()
     for (int i = 0; i < k; ++i)
     {
         split_for_depth(*line[i]);
+        printf("%i ", summ);
     }
     return 0;
 }
@@ -174,12 +175,13 @@ char split_for_depth(char& line)
                 a = atoi(depth[j]);
                 if (a < 50)
                 {
-                    printf("Lokh\n");
+                    b = atoi(lines[k]);
+                    summ += b;
                 }
             }
-        }
-        
+        } 
+
     }
-    return 0;
+    return summ;
 }
 
